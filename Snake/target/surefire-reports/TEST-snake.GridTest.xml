@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="snake.GridTest" time="0.035" tests="9" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="snake.GridTest" time="0.029" tests="9" errors="0" skipped="0" failures="0">
   <properties>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
     <property name="java.specification.version" value="11"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="FR"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-11-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/home/qs/PortFolio/Snake/target/surefire/surefirebooter12580731006073852392.jar /home/qs/PortFolio/Snake/target/surefire 2021-04-28T10-20-36_524-jvmRun1 surefire6167601439496721781tmp surefire_02588073660137739052tmp"/>
+    <property name="sun.java.command" value="/home/qs/PortFolio/Snake/target/surefire/surefirebooter10148181284599289105.jar /home/qs/PortFolio/Snake/target/surefire 2021-04-28T11-14-32_999-jvmRun1 surefire16727658082465480390tmp surefire_018423270875993539020tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/home/qs/PortFolio/Snake/target/test-classes:/home/qs/PortFolio/Snake/target/classes:/home/qs/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.4.0/junit-jupiter-engine-5.4.0.jar:/home/qs/.m2/repository/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar:/home/qs/.m2/repository/org/junit/platform/junit-platform-engine/1.4.0/junit-platform-engine-1.4.0.jar:/home/qs/.m2/repository/org/opentest4j/opentest4j/1.1.1/opentest4j-1.1.1.jar:/home/qs/.m2/repository/org/junit/platform/junit-platform-commons/1.4.0/junit-platform-commons-1.4.0.jar:/home/qs/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.4.0/junit-jupiter-api-5.4.0.jar:/home/qs/.m2/repository/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar:/home/qs/.m2/repository/junit/junit/4.10/junit-4.10.jar:/home/qs/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -31,7 +31,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/home/qs/PortFolio/Snake/target/surefire/surefirebooter12580731006073852392.jar"/>
+    <property name="surefire.real.class.path" value="/home/qs/PortFolio/Snake/target/surefire/surefirebooter10148181284599289105.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.11+9-Ubuntu-0ubuntu2.20.04"/>
     <property name="user.name" value="qs"/>
@@ -56,13 +56,13 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="testToString" classname="snake.GridTest" time="0.023"/>
+  <testcase name="testToString" classname="snake.GridTest" time="0.016"/>
   <testcase name="dropBlock" classname="snake.GridTest" time="0.001"/>
-  <testcase name="dropFood" classname="snake.GridTest" time="0"/>
+  <testcase name="dropFood" classname="snake.GridTest" time="0.001"/>
   <testcase name="placeObject" classname="snake.GridTest" time="0.001"/>
   <testcase name="getCell" classname="snake.GridTest" time="0.001"/>
-  <testcase name="getGrid" classname="snake.GridTest" time="0"/>
-  <testcase name="pointInsideGrid" classname="snake.GridTest" time="0.001"/>
+  <testcase name="getGrid" classname="snake.GridTest" time="0.001"/>
+  <testcase name="pointInsideGrid" classname="snake.GridTest" time="0"/>
   <testcase name="getNCols" classname="snake.GridTest" time="0.001"/>
-  <testcase name="getNRows" classname="snake.GridTest" time="0.003"/>
+  <testcase name="getNRows" classname="snake.GridTest" time="0.001"/>
 </testsuite>

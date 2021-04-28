@@ -66,47 +66,22 @@ public class Snake {
 
     public void moveOn(Grid grid) {
         int[] next = getNextPosition();
-        if (next[0] == -1) {
-            getPos()[0] = grid.getNRows();
-            if (grid.getCell(getPos()[0], getPos()[1]).equals("#") ||
-            grid.getCell(getPos()[0], getPos()[1]).equals("*")) {
-            killSnake();
-            } else if (grid.getCell(getPos()[0], getPos()[1]).equals("o")) {
-                increaseSize();
-            }
-        } else if (next[0] == (grid.getNRows() + 1)) {
-            getPos()[0] = 0;
-            if (grid.getCell(getPos()[0], getPos()[1]).equals("#") ||
-            grid.getCell(getPos()[0], getPos()[1]).equals("*")) {
-            killSnake();
-            } else if (grid.getCell(getPos()[0], getPos()[1]).equals("o")) {
-                increaseSize();
-            }
-        } else if (next[1] == -1) {
-            getPos()[1] = grid.getNCols();
-            if (grid.getCell(getPos()[0], getPos()[1]).equals("#") ||
-            grid.getCell(getPos()[0], getPos()[1]).equals("*")) {
-            killSnake();
-            } else if (grid.getCell(getPos()[0], getPos()[1]).equals("o")) {
-                increaseSize();
-            }
-        } else if(next[1] == (grid.getNCols() + 1)) {
-            getPos()[1] = 0;
-            if (grid.getCell(getPos()[0], getPos()[1]).equals("#") ||
-            grid.getCell(getPos()[0], getPos()[1]).equals("*")) {
-            killSnake();
-            } else if (grid.getCell(getPos()[0], getPos()[1]).equals("o")) {
-                increaseSize();
-            }
+        if (next[0] == grid.getNRows()) {
+            pos[0] = 0;
+        } else if (next[0] < 0) {
+            pos[0] = grid.getNRows() - 1;
+        } else if (next[1] == grid.getNCols()) {
+            pos[1] = 0;
+        } else if (next[1] < 0) {
+            pos[1] = grid.getNCols() - 1;
         } else {
-            if (grid.getCell(next[0], next[1]).equals("#") ||
-            grid.getCell(next[0], next[1]).equals("*")) {
+            pos = next;
+        }
+        if (grid.getCell(pos[0], pos[1]).equals("#") ||
+            grid.getCell(pos[0], pos[1]).equals("*")) {
             killSnake();
-            } else if (grid.getCell(next[0], next[1]).equals("o")) {
-                increaseSize();
-            }
-            getPos()[0] = next[0];
-            getPos()[1] = next[1];
+        } else if (grid.getCell(pos[0], pos[1]).equals("o")) {
+            size++;
         }
     }
 
