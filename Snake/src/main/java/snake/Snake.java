@@ -11,12 +11,22 @@ public class Snake {
     Boolean alive = true;
     private int size = 1;
 
+    /**
+    * This is the constructor of the Snake Object.
+    * The Snake is initialized with a position, an
+    * initial speed and a color.
+    */
     public Snake(int[] pos, int[] speed, String color) {
         this.pos = pos;
         this.speed = speed;
         this.color = color;
     }
 
+    /**
+    * This method checks if the snake is still alive.
+    * @return True or False, depending on
+    * wether snake has collided with a wall or itself.
+    */
     public boolean isAlive() {
         return this.alive;
     }
@@ -85,10 +95,21 @@ public class Snake {
         }
     }
 
+    /**
+    * Usual getter to access private data
+    * of the Snake object. 
+    * @return Position of the snake as a int array
+    * with 2 elements {y, x}.
+    */
     public int[] getPos() {
         return pos;
     }
 
+    /**
+    * Usual getter to access private data
+    * of the Snake object. 
+    * @return Size of the snake as an int.
+    */
     public int getSize() {
         return size;
     }
