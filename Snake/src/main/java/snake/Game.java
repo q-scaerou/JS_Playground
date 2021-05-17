@@ -7,7 +7,6 @@ import javax.swing.*;
 import java.io.FileWriter;
 import java.io.IOException;
 
-
 public class Game extends JFrame implements KeyListener {
 
     int nRows;
@@ -22,8 +21,8 @@ public class Game extends JFrame implements KeyListener {
         this.nCols = nCols;
 
         this.g = new Grid(nRows, nCols);
-        int[] pos = {4, 4};
-        int[] speed = {1, 0};
+        int[] pos = { 4, 4 };
+        int[] speed = { 1, 0 };
         this.s = new Snake(pos, speed, "red");
 
         pack();
@@ -31,9 +30,7 @@ public class Game extends JFrame implements KeyListener {
         setVisible(true);
 
         Timer timer = new Timer(1000, null);
-        GridActionListener listener = new GridActionListener(
-                this, g, s, timer
-        );
+        GridActionListener listener = new GridActionListener(this, g, s, timer);
         timer.addActionListener(listener);
         timer.start();
     }
@@ -44,14 +41,22 @@ public class Game extends JFrame implements KeyListener {
         // Create and set up the window.
         Game frame = new Game("SnakeThis", nRows, nCols);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        frame.pack();
+        frame.setSize(nCols * 30, nRows * 30);
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+        JPanel panel = new JPanel();
+        panel.setSize(frame.nCols * 30, frame.nRows * 30);
+        
+
     }
 
     // Satisfy KeyListener interface constraint
-    public void keyReleased(KeyEvent e) { }
-    public void keyTyped(KeyEvent e) { }
+    public void keyReleased(KeyEvent e) {
+    }
+
+    public void keyTyped(KeyEvent e) {
+    }
+
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
             System.out.println("RIGHT");
@@ -66,18 +71,26 @@ public class Game extends JFrame implements KeyListener {
     public static void main(String[] args) {
         // Recover command line arguments for the size of
         // the grid to generate
-        int nRows = Integer.parseInt(args[0]);
-        int nCols = Integer.parseInt(args[1]);
-
-        // Schedule app boot in the EDT
+        int nRows = (int) (Math.random() * 20);
+        int nCols = (int) (Math.random() * 20);
+        if (nRows < 5) {
+            nRows = 5;
+        }
+        if (nCols < 5) {
+            nCols = 5;
+        }
+        final int columns = nCols;
+        final int rows = nRows;
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                createAndShowGUI(nRows, nCols);
+
+                createAndShowGUI(rows, columns);
             }
         });
+
+        // Schedule app boot in the EDT
     }
 }
-
 
 class GridActionListener implements ActionListener {
 
